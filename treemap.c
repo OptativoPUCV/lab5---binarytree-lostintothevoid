@@ -66,7 +66,9 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
     if(is_equal(tree, key, aux->key)==1){
       return aux;
     }
-    aux= nextTreeMap(tree);
+    else{
+      aux= nextTreeMap(tree);
+    }
   }
   return NULL;
 }
