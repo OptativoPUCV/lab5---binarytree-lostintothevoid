@@ -81,7 +81,7 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
     
     
   }
-  return aux->pair;
+  return NULL;
 }
 
 Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
