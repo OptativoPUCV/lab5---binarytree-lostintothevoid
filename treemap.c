@@ -71,11 +71,11 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
     
     resultado = tree->lower_than(key,aux->pair->key);
     if(resultado==1){
-      tree->current=tree->current->right;
+      tree->current=tree->current->left;
       aux=tree->current;
     }
     else{
-      tree->current=tree->current->left;
+      tree->current=tree->current->right;
       aux=tree->current;
     }
     
