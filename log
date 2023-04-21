@@ -180,3 +180,8 @@ test.c:(.text+0xbda): undefined reference to `eraseTreeMap'
 collect2: error: ld returned 1 exit status
 Compilation failed
 7c0aa62
+Fri 21 Apr 2023 07:34:31 PM UTC: 
+ treemap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+ tests:  0|0
+d5be8cf
