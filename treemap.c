@@ -52,11 +52,8 @@ void insertTreeMap(TreeMap *tree, void *key, void *value) {
   }
   if(searchTreeMap(tree, key)==NULL){
     TreeNode* temp = createTreeNode(key, value);
-    if(tree->current->right==NULL){
-      tree->current->right=temp;
-    }
-    else{
-      tree->current->left=temp;
+    tree->current=temp;
+  
     }
   }
 }
