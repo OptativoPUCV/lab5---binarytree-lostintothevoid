@@ -46,8 +46,8 @@ TreeMap *createTreeMap(int (*lower_than)(void *key1, void *key2)) {
 
 void insertTreeMap(TreeMap *tree, void *key, void *value) {
   if(tree->root==NULL){
-    tree->root->pair->key=key;
-    tree->root->pair->value=value;
+    TreeNode* root = createTreeNode(key, value);
+    tree->root=root;
     return;
   }
   if(searchTreeMap(tree, key)==NULL){
