@@ -55,13 +55,14 @@ void insertTreeMap(TreeMap *tree, void *key, void *value) {
     temp->parent=tree->current;
     if(tree->lower_than(key, tree->current->pair->key)==1){
       tree->current->left=temp;
-      return;
+      
     }
     else{
       tree->current->right=temp;
-      return;
+      
     }
   }
+  return;
 }
 
 TreeNode *minimum(TreeNode *x) { return NULL; }
