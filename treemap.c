@@ -68,20 +68,20 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
     if(is_equal(tree, key, aux->pair->key)==1){
       return aux->pair;
     }  
-    else
-    {
-      if(is_equal(tree, key, aux->pair->key)==0){
-        resultado = tree->lower_than(key,aux->pair->key);
-        if(resultado==1){
-          tree->current=tree->current->right;
-          aux=tree->current;
-        }
-        else{
-          tree->current=tree->current->left;
-          aux=tree->current;
-        }
+    
+    
+    if(is_equal(tree, key, aux->pair->key)==0){
+      resultado = tree->lower_than(key,aux->pair->key);
+      if(resultado==1){
+        tree->current=tree->current->right;
+        aux=tree->current;
+      }
+      else{
+        tree->current=tree->current->left;
+        aux=tree->current;
       }
     }
+    
   }
   return NULL;
 }
