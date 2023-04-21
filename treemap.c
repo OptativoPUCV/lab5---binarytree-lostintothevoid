@@ -96,10 +96,10 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
     else{
       aux=aux->right;
     }
-    
+    tree->current=aux;
     
   }
-  tree->current=aux;
+  
   return NULL;
 }
 
