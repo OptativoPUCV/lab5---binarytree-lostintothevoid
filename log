@@ -158,3 +158,15 @@ Fri 21 Apr 2023 07:32:50 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 374600a
+Fri 21 Apr 2023 07:33:48 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/cccgH470.o: in function `erase_test1':
+test.c:(.text+0xa9a): undefined reference to `eraseTreeMap'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/cccgH470.o: in function `erase_test2':
+test.c:(.text+0xb2a): undefined reference to `eraseTreeMap'
+/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /tmp/cccgH470.o: in function `erase_test3':
+test.c:(.text+0xbda): undefined reference to `eraseTreeMap'
+collect2: error: ld returned 1 exit status
+Compilation failed
+a002b6f
