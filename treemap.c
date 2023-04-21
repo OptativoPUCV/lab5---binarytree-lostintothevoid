@@ -72,7 +72,36 @@ TreeNode *minimum(TreeNode *x) {
   }
 }
 
-void removeNode(TreeMap *tree, TreeNode *node) {}
+void removeNode(TreeMap *tree, TreeNode *node) {
+  if(searchTreeMap(tree, node->pair->key)==NULL) return;
+  else{
+    tree->current=node->parent;
+    if(node->left==NULL && node->right==NULL){
+      node->parent=NULL;
+      node=NULL;
+    }
+    if(node->left!=NULL && node->right==NULL){
+      node->left->parent=tree->current;
+      tree->current->left=node->left;
+      node->parent=NULL;
+      node=NULL;
+    }
+    else{
+      if(node->left==NULL && node->right!=NULL){
+        node->right->parent=tree->current;
+        tree->current->right=node->right;
+        node->parent=NULL;
+        node=NULL;
+      }
+    }
+    if(node->left!=NULL && node->right!=NULL){
+      TreeNode* min=minimum(node);
+      node->pair->key=min->pair->key;
+      node->pair->value=min->pair->value;
+      removeNode(tree, min);
+    }
+  }
+}
 
 void eraseTreeMap(TreeMap *tree, void *key) {
   if (tree == NULL || tree->root == NULL)
