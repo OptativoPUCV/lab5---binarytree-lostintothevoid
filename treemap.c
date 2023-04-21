@@ -69,18 +69,16 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
       return aux->pair;
     }  
     
-    
-    if(is_equal(tree, key, aux->pair->key)==0){
-      resultado = tree->lower_than(key,aux->pair->key);
-      if(resultado==1){
-        tree->current=tree->current->right;
-        aux=tree->current;
-      }
-      else{
-        tree->current=tree->current->left;
-        aux=tree->current;
-      }
+    resultado = tree->lower_than(key,aux->pair->key);
+    if(resultado==1){
+      tree->current=tree->current->right;
+      aux=tree->current;
     }
+    else{
+      tree->current=tree->current->left;
+      aux=tree->current;
+    }
+    
     
   }
   return NULL;
