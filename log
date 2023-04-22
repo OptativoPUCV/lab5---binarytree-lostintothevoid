@@ -299,3 +299,14 @@ Sat 22 Apr 2023 08:01:05 PM UTC:
  tests:  20|3
 total_score: 45/70
 f784a71
+Sat 22 Apr 2023 08:02:46 PM UTC: 
+ treemap.c | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:182:35: error: ‘TreeMap’ has no member named ‘curret’; did you mean ‘current’?
+  182 |   if(tree->current==minimum(tree->curret) && aux){
+      |                                   ^~~~~~
+      |                                   current
+Compilation failed
+6d25633
