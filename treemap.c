@@ -166,42 +166,34 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
 
 Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
 
-Pair *firstTreeMap(TreeMap *tree) {
-  if (!tree)
-    return NULL;
-  tree->current = tree->root;
-  tree->current = minimum(tree->current);
-  return tree->current->pair;
-}
-
 Pair *nextTreeMap(TreeMap *tree) {
-  TreeNode *aux = tree->current->right;
-  if (tree->current == minimum(tree->current) && aux) {
-    tree->current = tree->current->right;
+  TreeNode *aux=tree->current->right;
+  if(tree->current==minimum(tree->current) && aux){
+    tree->current=tree->current->right;
     return aux->pair;
   }
-  if (tree->current == minimum(tree->current) && !aux) {
-    tree->current = tree->current->parent;
+  if(tree->current==minimum(tree->current) && !aux){
+    tree->current=tree->current->parent;
     return tree->current->pair;
   }
-  if (tree->current != minimum(tree->current)) {
-    if (tree->current->right != NULL) {
-      tree->current = minimum(tree->current->right);
+  if(tree->current!=minimum(tree->current)){
+    if(tree->current->right!=NULL){
+      tree->current=minimum(tree->current->right);
     }
-    else {
-      aux = tree->current->parent;
-      while (aux != NULL && tree->current == aux->right) {
-        tree->current = aux;
-        aux = aux->parent;
+    else{
+      aux=tree->current->parent;
+      while(aux!=NULL && tree->current== aux->right){
+        tree->current=aux;
+        aux=aux->parent;
       }
-      tree->current = aux;
-      if (tree->current != NULL) {
+      tree->current=aux;
+    
+      if(tree->current!=NULL){
         return tree->current->pair;
-      } 
-      else {
-        return NULL;
+      }
+      else{
+        return NULL;  
       }
     }
-  }
+  }  
 }
-
