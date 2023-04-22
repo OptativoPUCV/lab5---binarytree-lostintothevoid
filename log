@@ -316,3 +316,20 @@ Sat 22 Apr 2023 08:02:56 PM UTC:
  tests:  20|3
 total_score: 45/70
 c63ba97
+Sat 22 Apr 2023 08:38:32 PM UTC: 
+ treemap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:196:34: error: expected ‘;’ before ‘tree’
+  196 |         aux=tree->current->parent
+      |                                  ^
+      |                                  ;
+  197 |         tree->current=aux->parent;
+      |         ~~~~                      
+treemap.c:191:7: error: suggest explicit braces to avoid ambiguous ‘else’ [-Werror=dangling-else]
+  191 |     if(!tree->current->right && !tree->current->left)
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+cfed5a5
