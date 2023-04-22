@@ -205,16 +205,6 @@ Pair *nextTreeMap(TreeMap *tree) {
     
   }
   if(tree->current!=NULL){
-    aux = tree->current;
-    while (aux->right != NULL) {
-      aux = aux->right;
-    }
-    if(tree->current==aux){
-      return NULL;
-    }
-    else{
-      return tree->current->pair;
-    }
     return tree->current->pair;
   }
   else{
