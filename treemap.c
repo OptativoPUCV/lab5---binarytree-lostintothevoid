@@ -187,10 +187,10 @@ Pair *nextTreeMap(TreeMap *tree) {
     tree->current=tree->current->parent;
     return tree->current->pair;
   }
-  if(tree->current==minimum(tree->current)){
+  /*if(tree->current==minimum(tree->current)){
     tree->current=tree->current->parent;
     return tree->current->pair;
   }
-
+*/
   return tree->current->pair; 
 }
