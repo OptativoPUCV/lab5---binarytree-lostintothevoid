@@ -205,8 +205,10 @@ Pair *nextTreeMap(TreeMap *tree) {
       }
     }
   }
-  if(tree->current!=NULL)
+  if(tree->current!=NULL){
     return tree->current->pair;
-  else
-    return NULL;
+  }
+  else{
+    return NULL;  
+  }
 }
