@@ -173,6 +173,7 @@ Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
 Pair *firstTreeMap(TreeMap *tree) {
   if(!tree) return NULL;
   tree->current = tree->root;
+  tree->current = minimum(tree->current);
   return tree->current->pair;
 }
 
