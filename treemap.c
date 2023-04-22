@@ -204,12 +204,7 @@ Pair *nextTreeMap(TreeMap *tree) {
       tree->current=aux;
       }
     }
-    if (tree->current != NULL && tree->current != minimum(tree->current)) {
-      aux=tree->current->parent;
-      while (aux != NULL && aux->right == tree->current) {
-        tree->current = tree->current->parent;
-      }
-    tree->current = tree->current->parent;
+
   }
   if(tree->current!=NULL)
     return tree->current->pair;
