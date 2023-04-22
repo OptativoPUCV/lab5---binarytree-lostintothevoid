@@ -208,6 +208,7 @@ Pair *nextTreeMap(TreeMap *tree) {
           tree->current = tree->current->parent;
         }
         tree->current = tree->current->parent;
+        if(tree->current==NULL) return NULL;
       }
     }
     
