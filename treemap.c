@@ -166,6 +166,13 @@ Pair *searchTreeMap(TreeMap *tree, void *key) {
 
 Pair *upperBound(TreeMap *tree, void *key) { return NULL; }
 
+Pair *firstTreeMap(TreeMap *tree) {
+  if(!tree) return NULL;
+  tree->current = tree->root;
+  tree->current = minimum(tree->current);
+  return tree->current->pair;
+}
+
 Pair *nextTreeMap(TreeMap *tree) {
   TreeNode *aux=tree->current->right;
   if(tree->current==minimum(tree->current) && aux){
@@ -187,13 +194,18 @@ Pair *nextTreeMap(TreeMap *tree) {
         aux=aux->parent;
       }
       tree->current=aux;
-    
-      if(tree->current!=NULL){
-        return tree->current->pair;
-      }
-      else{
-        return NULL;  
+      if (tree->current != NULL && tree->current != minimum(tree->current)) {
+        aux=tree->current->parent;
+        while (aux != NULL && aux->right == tree->current) {
+          tree->current = tree->current->parent;
+        }
+        tree->current = tree->current->parent;
       }
     }
-  }  
+    
+  }
+  if(tree->current!=NULL)
+    return tree->current->pair;
+  else
+    return NULL;
 }
