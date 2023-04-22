@@ -204,8 +204,17 @@ Pair *nextTreeMap(TreeMap *tree) {
     }
     
   }
-  if(tree->current!=NULL)
+  if(tree->current!=NULL){
+    TreeNode *aux = tree->current;
+    while (aux->right != NULL) {
+      aux = aux->right;
+    }
+    if(tree->current==aux){
+      return NULL;
+    }
     return tree->current->pair;
-  else
+  }
+  else{
     return NULL;
+  }
 }
