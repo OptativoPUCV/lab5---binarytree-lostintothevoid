@@ -78,10 +78,12 @@ void removeNode(TreeMap *tree, TreeNode *node) {
       if(tree->lower_than(tree->current->pair->key, node->pair->key)==1){
         node->parent->right=NULL;
         free(node);
+        
       }
       else{
         node->parent->left=NULL;
         free(node);
+        return;
       }
     }
     if(node->left!=NULL && node->right==NULL){
@@ -91,6 +93,7 @@ void removeNode(TreeMap *tree, TreeNode *node) {
         node->left->parent=tree->current;
         node->parent=NULL;
         free(node);
+        return;
       }
       else{
         //right
@@ -98,6 +101,7 @@ void removeNode(TreeMap *tree, TreeNode *node) {
         node->left->parent=tree->current;
         node->parent=NULL;
         free(node);
+        return;
       }
     }
     else{
@@ -108,6 +112,7 @@ void removeNode(TreeMap *tree, TreeNode *node) {
           node->right->parent=tree->current;
           node->parent=NULL;
           free(node);
+          return;
         }
         else{
           //right
@@ -115,6 +120,7 @@ void removeNode(TreeMap *tree, TreeNode *node) {
           node->right->parent=tree->current;
           node->parent=NULL;
           free(node);
+          return;
         }
       }
     }
@@ -123,6 +129,7 @@ void removeNode(TreeMap *tree, TreeNode *node) {
       node->pair->key=min->pair->key;
       node->pair->value=min->pair->value;
       removeNode(tree, min);
+      return;
     }
   }
 }
