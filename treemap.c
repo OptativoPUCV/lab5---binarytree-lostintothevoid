@@ -186,6 +186,7 @@ Pair *nextTreeMap(TreeMap *tree) {
   if(tree->current!=minimum(tree->current)){
     if(tree->current->right!=NULL){
       tree->current=minimum(tree->current->right);
+      return tree->current->pair;
     }
     else{
       aux=tree->current->parent;
@@ -201,6 +202,7 @@ Pair *nextTreeMap(TreeMap *tree) {
         }
         tree->current = tree->current->parent;
       }
+      return tree->current->pair;
     }
     
   }
