@@ -469,3 +469,12 @@ treemap.c:207:3: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 1b3f30a
+Sat 22 Apr 2023 09:57:10 PM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c:215:1: error: expected identifier or ‘(’ before ‘}’ token
+  215 | }
+      | ^
+Compilation failed
+5a5cee1
